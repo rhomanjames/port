@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastics Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-and-header">
+
+            <input type="text" id="searchInput" onkeyup="filterPlastics()" placeholder="Search for plastics...">
+        </div>
+        <!-- Filters -->
+        <div id="filters">
+            <select id="structureBearingFilter" onchange="filterPlastics()">
+                <option value="">All Types</option>
+                <option value="Structure">Structure</option>
+                <option value="Bearing">Bearing</option>
+            </select>
+
+            <select id="tempFilter" onchange="filterPlastics()">
+                <option value="">All Temperatures</option>
+                <option value="100-200F">100-200°F</option>
+                <option value="200-300F">200-300°F</option>
+                <option value="300-400F">300-400°F</option>
+                <option value="400-500F">400-500°F</option>
+                <option value="500-600F">500-600°F</option>
+                <option value="600-750F">600-750°F</option>
+            </select>
+
+            <select id="tensileStrengthFilter" onchange="filterPlastics()">
+                <option value="">All Tensile Strengths</option>
+                <option value="<10+"><10 MPa</option>
+                <option value="10-40">10 MPa - 40 MPa</option>
+                <option value="40-80">40 MPa - 80 MPa</option>
+                <option value="80-120">80 MPa - 120 MPa</option>
+                <option value="120+">120 MPa +</option>
+            </select>
+
+            <select id="usdaFilter" onchange="filterPlastics()">
+                <option value="">USDA Approval</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <select id="fdaFilter" onchange="filterPlastics()">
+                <option value="">FDA Approval</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+    </header>
+
+    <section id="plastic-list">
+        <ul id="plasticItems">
+            <!-- ABS -->
+<li data-structure-bearing="Structure" data-temp="" data-tensile-strength="10-40" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/abs-1/">
+        <h2>ABS</h2>
+        <p id="plasticDescription">ABS (Acrylonitrile Butadiene Styrene) is a tough, impact-resistant plastic known for its durability and strength. It is widely used in industries such as automotive, consumer electronics, and toys, for products like dashboard trims, protective headgear, and LEGO bricks.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: N/A</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- Acetal -->
+<li data-structure-bearing="Bearing" data-temp="100-200F" data-tensile-strength="40-80" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/acetal-1/">
+        <h2>Acetal</h2>
+        <p id="plasticDescription">Acetal is a highly crystalline thermoplastic known for its low friction, high stiffness, and excellent dimensional stability. It is commonly used in industries such as automotive, consumer electronics, and industrial machinery for manufacturing gears, bearings, and other precision mechanical components.</p>
+        <div id="plasticTags">
+            <p>Bearing</p> 
+            <p>Max Temp: 100-200°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- Acrylic -->
+<li data-structure-bearing="Structure" data-temp="200-300F" data-tensile-strength="40-80" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/acrylic-1/">
+        <h2>Acrylic</h2>
+        <p id="plasticDescription">Acrylic, also known as PMMA, is a transparent thermoplastic with excellent optical clarity and weather resistance. It is commonly used in industries such as signage, automotive, and consumer goods for making products like display cases, lenses, and outdoor signs.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 200-300°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- Acrylic/PVC -->
+<li data-structure-bearing="Structure" data-temp="200-300F" data-tensile-strength="40-80" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/acrylic-pvc/">
+        <h2>Acrylic/PVC</h2>
+        <p id="plasticDescription">Acrylic/PVC blends combine the clarity of acrylic with the toughness of PVC, offering improved impact resistance. These materials are often used in industries like construction and consumer goods for applications such as window panels, signage, and decorative trims.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 200-300°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- Glass Epoxies -->
+<li data-structure-bearing="Structure" data-temp="200-300F" data-tensile-strength="120+" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/categories/material/glass-epoxies.html">
+        <h2>Glass Epoxies</h2>
+        <p id="plasticDescription">Glass Epoxies are composite materials made by impregnating glass cloth with epoxy resin, resulting in a high-strength, high-temperature-resistant material. These are commonly used in electrical and electronic industries for circuit boards, insulators, and structural components.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 200-300°F</p>  
+            <p>Tensile Strength: 120 MPa +</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- HDPE -->
+<li data-structure-bearing="Structure" data-temp="100-200F" data-tensile-strength="10-40" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/hdpe-1/">
+        <h2>HDPE</h2>
+        <p id="plasticDescription">HDPE (High-Density Polyethylene) is a strong, lightweight plastic with excellent chemical resistance and durability. It is widely used in the packaging, construction, and agriculture industries for products like containers, piping, and geomembranes.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 100-200°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- HIPS/Polystyrene -->
+<li data-structure-bearing="Structure" data-temp="100-200F" data-tensile-strength="10-40" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/hips-polystyrene-1/">
+        <h2>HIPS/Polystyrene</h2>
+        <p id="plasticDescription">HIPS (High Impact Polystyrene) is a versatile and cost-effective plastic known for its ease of fabrication. It is commonly used in industries such as packaging, disposable cutlery, and consumer goods manufacturing for making products like trays, lids, and toys.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 100-200°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- Laminates/Composites -->
+<li data-structure-bearing="Structure" data-temp="" data-tensile-strength="120+" data-usda="" data-fda="">
+    <a href="https://portplastics.com/laminates-composites-1/">
+        <h2>Laminates/Composites</h2>
+        <p id="plasticDescription">Laminates and composites are multi-layered materials combining different substances to achieve superior mechanical, thermal, or electrical properties. They are widely used in aerospace, automotive, and electronics industries for structural components, insulation, and lightweight panels.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: N/A</p>  
+            <p>Tensile Strength: 120 MPa +</p> 
+            <p>USDA: N/A</p> 
+            <p>FDA: N/A</p>
+        </div>
+    </a>
+</li>
+
+<!-- LDPE -->
+<li data-structure-bearing="Structure" data-temp="100-200F" data-tensile-strength="10-40" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/ldpe-1/">
+        <h2>LDPE</h2>
+        <p id="plasticDescription">LDPE (Low-Density Polyethylene) is known for its flexibility and resistance to impact, chemicals, and moisture. It is widely used in the packaging industry for products like plastic bags, film wrap, and bottles, as well as in cable insulation and toys.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 100-200°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- Nylon -->
+<li data-structure-bearing="Structure" data-temp="200-300F" data-tensile-strength="40-80" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/nylon-1/">
+        <h2>Nylon</h2>
+        <p id="plasticDescription">Nylon is a durable and versatile thermoplastic known for its high mechanical strength, good abrasion resistance, and chemical stability. It is used in industries such as automotive, textile, and consumer electronics for manufacturing gears, bearings, and fabrics.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 200-300°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PAI -->
+<li data-structure-bearing="Bearing" data-temp="400-500F" data-tensile-strength="80-120" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/pai-1/">
+        <h2>PAI</h2>
+        <p id="plasticDescription">PAI (Polyamide-imide) is a high-performance thermoplastic known for its exceptional mechanical strength, heat resistance, and dimensional stability. It is widely used in aerospace, automotive, and electronics industries for making bearings, seals, and structural components that require high-temperature resistance and mechanical performance.</p>
+        <div id="plasticTags">
+            <p>Bearing</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: 80 MPa - 120 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- PBT -->
+<li data-structure-bearing="Structure" data-temp="300-400F" data-tensile-strength="40-80" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/pbt-1/">
+        <h2>PBT</h2>
+        <p id="plasticDescription">PBT (Polybutylene Terephthalate) is a thermoplastic engineering polymer known for its excellent electrical insulation properties, low moisture absorption, and good chemical resistance. It is commonly used in automotive, electrical, and electronics industries for connectors, switches, and housings.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 300-400°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PEI -->
+<li data-structure-bearing="Bearing" data-temp="600-750F" data-tensile-strength="120+" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/pei-1/">
+        <h2>PEI</h2>
+        <p id="plasticDescription">PEI (Polyetherimide) is a high-performance engineering thermoplastic known for its high heat resistance, dimensional stability, and excellent mechanical properties. It is widely used in aerospace, automotive, and medical industries for applications like insulators, medical devices, and high-temperature components.</p>
+        <div id="plasticTags">
+            <p>Bearing</p> 
+            <p>Max Temp: 600-750°F</p>  
+            <p>Tensile Strength: 120 MPa +</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PEEK Grades -->
+<li data-structure-bearing="Structure" data-temp="300-400F" data-tensile-strength="80-120" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/peek-grades/">
+        <h2>PEEK Grades</h2>
+        <p id="plasticDescription">PEEK (Polyether Ether Ketone) is a high-performance thermoplastic known for its outstanding chemical resistance, thermal stability, and mechanical properties. It is used in demanding industries such as aerospace, automotive, and medical for components like bearings, seals, and surgical instruments.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 300-400°F</p>  
+            <p>Tensile Strength: 80 MPa - 120 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PET Grades -->
+<li data-structure-bearing="Structure" data-temp="300-400F" data-tensile-strength="80-120" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/pet-grades/">
+        <h2>PET Grades</h2>
+        <p id="plasticDescription">PET (Polyethylene Terephthalate) is a thermoplastic polymer widely used for its strength, clarity, and barrier properties. It is most commonly found in the packaging industry for bottles, containers, and films, but also in textiles and automotive applications.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 300-400°F</p>  
+            <p>Tensile Strength: 80 MPa - 120 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PFA -->
+<li data-structure-bearing="Bearing" data-temp="400-500F" data-tensile-strength="10-40" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/pfa-1/">
+        <h2>PFA</h2>
+        <p id="plasticDescription">PFA (Perfluoroalkoxy) is a fluoropolymer known for its superior chemical resistance, high temperature tolerance, and non-stick properties. It is commonly used in industries such as chemical processing, semiconductor manufacturing, and medical devices for tubing, linings, and seals.</p>
+        <div id="plasticTags">
+            <p>Bearing</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- Phenolics -->
+<li data-structure-bearing="Structure" data-temp="400-500F" data-tensile-strength="40-80" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/categories/material/phenolics.html">
+        <h2>Phenolics</h2>
+        <p id="plasticDescription">Phenolics, also known as Bakelite, are thermosetting plastics known for their high mechanical strength, heat resistance, and electrical insulating properties. They are widely used in electrical and automotive industries for components like switches, handles, and insulators.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- PI - Polyimide Grades -->
+<li data-structure-bearing="Structure" data-temp="600-750F" data-tensile-strength="120+" data-usda="" data-fda="">
+    <a href="https://portplastics.com/pi-polyimide-grades/">
+        <h2>PI - Polyimide Grades</h2>
+        <p id="plasticDescription">Polyimide is a high-performance plastic known for its exceptional thermal stability, chemical resistance, and mechanical properties. It is commonly used in industries such as aerospace, electronics, and automotive for applications like insulators, seals, and high-temperature components.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 600-750°F</p>  
+            <p>Tensile Strength: 120 MPa +</p> 
+            <p>USDA: N/A</p> 
+            <p>FDA: N/A</p>
+        </div>
+    </a>
+</li>
+
+<!-- Polycarbonate -->
+<li data-structure-bearing="Structure" data-temp="200-300F" data-tensile-strength="40-80" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/polycarbonate-1/">
+        <h2>Polycarbonate</h2>
+        <p id="plasticDescription">Polycarbonate is a durable, impact-resistant plastic known for its optical clarity and high strength. It is commonly used in industries like automotive, construction, and consumer electronics for applications such as windshields, safety glasses, and electronic casings.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 200-300°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- Polypropylene -->
+<li data-structure-bearing="Structure" data-temp="200-300F" data-tensile-strength="10-40" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/polypropylene-1/">
+        <h2>Polypropylene</h2>
+        <p id="plasticDescription">Polypropylene is a versatile thermoplastic known for its chemical resistance, low density, and fatigue resistance. It is widely used in industries such as packaging, automotive, and textiles for products like containers, automotive components, and ropes.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 200-300°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PPO -->
+<li data-structure-bearing="Structure" data-temp="500-600F" data-tensile-strength="40-80" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/ppo-1/">
+        <h2>PPO</h2>
+        <p id="plasticDescription">PPO (Polyphenylene Oxide) is an engineering thermoplastic known for its high heat resistance, dimensional stability, and electrical insulating properties. It is commonly used in the automotive and electrical industries for applications like pump components, electrical housings, and connectors.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 500-600°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- PPS -->
+<li data-structure-bearing="Structure" data-temp="400-500F" data-tensile-strength="80-120" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/ppo-1/">
+        <h2>PPS</h2>
+        <p id="plasticDescription">PPS (Polyphenylene Sulfide) is a high-performance thermoplastic known for its outstanding chemical resistance, heat resistance, and dimensional stability. It is widely used in automotive, electronics, and chemical processing industries for components like pump housings, connectors, and valves.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: 80 MPa - 120 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PTFE -->
+<li data-structure-bearing="Bearing" data-temp="500-600F" data-tensile-strength="10-40" data-usda="Yes" data-fda="Yes">
+    <a href="#">
+        <h2>PTFE</h2>
+        <p id="plasticDescription">PTFE (Polytetrafluoroethylene) is a fluoropolymer known for its non-stick properties, chemical resistance, and high temperature tolerance. It is commonly used in industries such as chemical processing, food processing, and electronics for applications like seals, gaskets, and non-stick coatings.</p>
+        <div id="plasticTags">
+            <p>Bearing</p> 
+            <p>Max Temp: 500-600°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- PSU/PPSU -->
+<li data-structure-bearing="Structure" data-temp="" data-tensile-strength="80-120" data-usda="" data-fda="">
+    <a href="https://portplastics.com/psu-ppsu-1/">
+        <h2>PSU/PPSU</h2>
+        <p id="plasticDescription">PSU (Polysulfone) and PPSU (Polyphenylsulfone) are high-performance thermoplastics known for their excellent mechanical properties, heat resistance, and chemical resistance. They are commonly used in medical, automotive, and aerospace industries for applications like sterilizable medical instruments, automotive components, and aircraft interiors.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: N/A</p>  
+            <p>Tensile Strength: 80 MPa - 120 MPa</p> 
+            <p>USDA: N/A</p> 
+            <p>FDA: N/A</p>
+        </div>
+    </a>
+</li>
+
+<!-- PVC/PVC Foam -->
+<li data-structure-bearing="Structure" data-temp="400-500F" data-tensile-strength="<10" data-usda="No" data-fda="No">
+    <a href="https://portplastics.com/pvc-pvc-foam-1/">
+        <h2>PVC/PVC Foam</h2>
+        <p id="plasticDescription">PVC (Polyvinyl Chloride) and PVC Foam are versatile plastics known for their chemical resistance, durability, and ease of fabrication. They are widely used in construction, signage, and packaging industries for applications like pipes, window frames, and foam boards.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: <10 MPa</p> 
+            <p>USDA: No</p> 
+            <p>FDA: No</p>
+        </div>
+    </a>
+</li>
+
+<!-- PVDF -->
+<li data-structure-bearing="Structure" data-temp="400-500F" data-tensile-strength="40-80" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/pvdf-1/">
+        <h2>PVDF</h2>
+        <p id="plasticDescription">PVDF (Polyvinylidene Fluoride) is a highly non-reactive and pure thermoplastic fluoropolymer. It is used extensively in the chemical processing industry, electrical applications, and for high-purity fluid handling systems due to its chemical resistance, high purity, and UV resistance.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: 40 MPa - 80 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+<!-- UHMW -->
+<li data-structure-bearing="Structure" data-temp="400-500F" data-tensile-strength="10-40" data-usda="Yes" data-fda="Yes">
+    <a href="https://portplastics.com/uhmw-1/">
+        <h2>UHMW</h2>
+        <p id="plasticDescription">UHMW (Ultra-High-Molecular-Weight Polyethylene) is a type of polyethylene with extremely long chains, offering exceptional abrasion resistance, impact strength, and low friction properties. It is widely used in industries such as food processing, material handling, and mining for applications like conveyor belts, guides, and wear strips.</p>
+        <div id="plasticTags">
+            <p>Structure</p> 
+            <p>Max Temp: 400-500°F</p>  
+            <p>Tensile Strength: 10 MPa - 40 MPa</p> 
+            <p>USDA: Yes</p> 
+            <p>FDA: Yes</p>
+        </div>
+    </a>
+</li>
+
+
+<!-- No Results Found -->
+<li id="noResults" class="no-results" style="display: none;">
+    <a href="#">
+        <h2>No Results Found</h2>
+        <p id="noResultsDescription">Unfortunately, no items match your selected filters. Please try adjusting the filters to find the items you need.</p>
+    </a>
+</li>
+
+
+
+            <!-- More items can be added here following the same format -->
+            
+            <!-- Repeat similar list items for other plastics based on the provided data -->
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
